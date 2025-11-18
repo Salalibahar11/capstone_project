@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* --- GLOBAL BODY --- */
+body {
+    background: #ffffff;
+    min-height: 100vh;
+    /* Kita menghapus display: flex dari body agar halaman Home bisa scroll normal */
+}
+
+/* =========================================
+   STYLE KHUSUS HALAMAN LOGIN (Split Screen)
+   ========================================= */
+/* Container Login kita buat Flexbox penuh layar di sini */
+.split-screen-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #f0f2f5; /* Kembalikan background login ke abu-abu jika mau, atau putih */
+}
+
+/* Bagian Kiri & Kanan Login (Kode sebelumnya) */
+.left-pane {
+    flex: 1;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.illustration {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+.right-pane {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* --- INPUTS & BUTTONS (Digunakan di Login & Register) --- */
+.header-text h3 { font-size: 28px; font-weight: 600; color: #333; margin-bottom: 30px; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-size: 14px; color: #555; margin-bottom: 8px; font-weight: 500; }
+.form-control { width: 100%; padding: 14px 16px; background-color: #f9f9f9; border: 1px solid #eee; border-radius: 8px; font-size: 14px; color: #333; outline: none; transition: 0.3s; }
+.form-control:focus { border-color: #1a73e8; background-color: #fff; }
+.password-wrapper { position: relative; }
+.eye-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #aaa; cursor: pointer; }
+.btn { width: 100%; padding: 14px; border-radius: 8px; border: none; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 15px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-primary { background-color: #1a73e8; color: #fff; }
+.btn-primary:hover { background-color: #1557b0; }
+.btn-google { background-color: #e8f0fe; color: #1a73e8; }
+.btn-google:hover { background-color: #d2e3fc; color: #174ea6; }
+.footer-text { text-align: center; margin-top: 20px; font-size: 14px; color: #666; }
+.footer-text a, .forgot-link { color: #1a73e8; font-weight: 600; }
+.d-flex-between { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.d-none { display: none !important; }
+
+
+/* =========================================
+   STYLE KHUSUS HALAMAN HOME (Navbar & Hero)
+   ========================================= */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee; /* Garis tipis di bawah navbar seperti gambar */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    border-bottom: 3px solid #000; /* Garis bawah tebal untuk menu aktif */
+}
+
+/* Tombol Logout Style text biasa tapi tebal */
+#logout-btn {
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    min-height: 85vh; /* Agar memenuhi layar tersisa */
+    overflow: hidden; /* Mencegah scrollbar horizontal */
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-text h1 {
+    font-size: 56px; /* Ukuran font besar */
+    line-height: 1.2;
+    font-weight: 700;
+    color: #000;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Gambar rata kanan */
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    /* Sedikit animasi mengambang opsional */
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Animasi Mengambang Satelit */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Mobile Responsive untuk Home */
+@media (max-width: 900px) {
+    .navbar { padding: 20px 30px; }
+    .nav-links { display: none; } /* Sembunyikan menu di HP sementara */
+    
+    .hero-section {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        padding: 40px 30px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .hero-text h1 { font-size: 36px; margin-top: 20px; }
+    .hero-image { justify-content: center; }
+    .hero-image img { max-width: 300px; }
+}

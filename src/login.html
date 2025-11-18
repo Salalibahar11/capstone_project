@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="split-screen-container">
+
+        <div class="left-pane">
+            <img src="../img/Illustration.png" alt="Illustration" class="illustration">
+        </div>
+
+        <div class="right-pane">
+
+            <div id="login-form-container" class="form-content">
+                <div class="header-text">
+                    <h3>Login to your account</h3>
+                </div>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="login-username">Email</label>
+                        <input type="text" id="login-username" class="form-control" placeholder="example@gmail.com"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="d-flex-between">
+                            <label for="login-password">Password</label>
+                            <a href="#" class="forgot-link">Forgot?</a>
+                        </div>
+                        <div class="password-wrapper">
+                            <input type="password" id="login-password" class="form-control"
+                                placeholder="Enter your password" required>
+                            <i class="bi bi-eye eye-icon"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+                    <button type="button" class="btn btn-google">
+                        <i class="bi bi-google"></i> Continue with Google
+                    </button>
+
+                    <div class="footer-text">
+                        <small>Don't have an account? <a href="#" id="show-register">Sign Up</a></small>
+                    </div>
+                </form>
+            </div>
+
+            <div id="register-form-container" class="form-content d-none">
+                <div class="header-text">
+                    <h3>Create an account</h3>
+                </div>
+
+                <form id="register-form">
+                    <div class="input-group">
+                        <label for="reg-username">Username/Email</label>
+                        <input type="text" id="reg-username" class="form-control" placeholder="Enter username or email"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="reg-password" class="form-control"
+                                placeholder="Enter your password" required>
+                            <i class="bi bi-eye eye-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reg-confirm-password">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="reg-confirm-password" class="form-control"
+                                placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create account</button>
+
+                    <button type="button" class="btn btn-google">
+                        <i class="bi bi-google"></i> Continue with Google
+                    </button>
+
+                    <div class="footer-text">
+                        <small>Already have an account? <a href="#" id="show-login">Log In</a></small>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
