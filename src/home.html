@@ -15,8 +15,8 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Recommendation</a></li>
+            <li><a href="/src/product.html">Product</a></li>
+            <li><a href="/src/recommendation.html">Recommendation</a></li>
             <li><a href="#" id="logout-btn">Logout</a></li>
         </ul>
         <div class="menu-toggle">
@@ -27,12 +27,96 @@
     <section class="hero-section">
         <div class="hero-text">
             <h1>Telco Product <br> Recommendation <br> Based on <br> Customer Behavior</h1>
+            <p>Temukan paket internet terbaik yang disesuaikan dengan kebutuhan dan pola penggunaan Anda sehari-hari.</p>
+            <a href="/src/product.html" class="btn-cta">Cari Paket</a>
         </div>
         <div class="hero-image">
-            <img src="../img/satellite in orbit (1).png" alt="Satellite Illustration">
+            <img src="/img/processed_image.png" alt="Satellite Illustration">
         </div>
     </section>
 
-    <script src="../script.js"></script>
+    <section class="features-section">
+        <div class="section-title">
+            <h2>Cara Kerja Rekomendasi Kami</h2>
+            <p>Temukan paket yang paling pas dengan pola penggunaan Anda dalam 3 langkah mudah.</p>
+        </div>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <div class="icon-box">
+                    <i class="bi bi-sliders"></i>
+                </div>
+                <h3>Input Preferensi</h3>
+                <p>Masukkan data kebiasaan Anda seperti kuota internet, durasi telepon, dan budget bulanan.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">
+                    <i class="bi bi-crosshair"></i>
+                </div>
+                <h3>Akurasi Tinggi</h3>
+                <p>Sistem cerdas kami menganalisis data Anda untuk mencocokkan dengan ratusan paket yang tersedia.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+                <h3>Efisiensi Biaya</h3>
+                <p>Hindari membayar fitur yang tidak perlu. Dapatkan paket paling optimal untuk memaksimalkan budget Anda.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="section-title">
+            <h2 id="product-title">Paket Rekomendasi</h2>
+            <p id="product-subtitle">Pilihan paket terbaik bulan ini khusus untuk Anda.</p>
+        </div>
+        
+        <div id="dynamic-product-container" class="product-grid">
+            </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <i class="bi bi-wifi"></i> Telco
+                </div>
+                <p>Platform pintar yang membantu Anda menemukan paket internet dan layanan telekomunikasi terbaik sesuai dengan pola penggunaan dan budget Anda.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Fitur Utama</h4>
+                <a href="recommendation.html">Cari Rekomendasi</a>
+                <a href="product.html">Katalog Produk</a>
+                <a href="#">Bandingkan Paket</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Informasi</h4>
+                <a href="#">Cara Kerja AI</a>
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Ikuti Kami</h4>
+                <div class="social-links">
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            &copy; 2025 Telco Recommendation System. All rights reserved.
+        </div>
+    </footer>
+
+    <script type="module" src="../script.js"></script>
 </body>
 </html>
