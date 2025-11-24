@@ -686,209 +686,282 @@ body {
 }
 
 /* =========================================
-   STYLE KHUSUS HALAMAN PRODUCT (LIST VIEW)
+   STYLE HALAMAN PRODUCT (PROFESSIONAL GRID)
    ========================================= */
 
-.product-page-section {
-    padding: 40px 20px;
-    min-height: 85vh;
-    position: relative;
+/* Header Halaman */
+.page-header {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #fff; /* Warna putih agar kontras di background ungu */
 }
 
-.product-list-container {
-    max-width: 800px;
-    margin: 0 auto;
+.page-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Layout Grid */
+.product-page-section {
+    padding: 0 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: center;
+}
+
+/* Kartu Produk */
+.product-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    position: relative;
+}
+
+/* Efek Hover (Naik sedikit saat ditunjuk) */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Kartu Highlight (Tengah) */
+.product-card.highlight {
+    border: 2px solid #1a73e8;
+    transform: scale(1.05);
     z-index: 2;
+    box-shadow: 0 15px 40px rgba(26, 115, 232, 0.15);
 }
 
-/* Style Kartu List */
-.product-list-card {
-    background: #ffffff;
-    border: 1px solid #333;
-    border-radius: 15px;
-    padding: 25px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.product-card.highlight:hover {
+    transform: scale(1.05) translateY(-10px);
 }
 
-.product-list-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border-color: #1a73e8;
-}
-
-/* Bagian Kiri Kartu (Info) */
-.card-info {
-    flex: 1;
-}
-
-.card-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding-right: 20px;
-}
-
-.card-header-row h3 {
-    font-size: 20px;
+/* Badge "Best Seller" */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e0f2f7;
+    color: #1a73e8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 700;
-    color: #000;
+    text-transform: uppercase;
+}
+
+/* Icon Produk */
+.card-icon-top {
+    font-size: 40px;
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+/* Typography dalam Kartu */
+.product-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.speed {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.divider {
+    height: 1px;
+    background: #eee;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* List Fitur */
+.feature-list {
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Mendorong tombol ke bawah rata */
+    padding: 0 10px;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.bullet-icon {
-    font-size: 8px;
-    color: #000;
-}
-
-.menu-icon {
-    cursor: pointer;
-    color: #555;
-}
-
-.list-price {
-    font-weight: 600;
+.feature-list li i {
+    color: #1a73e8; /* Warna centang biru */
     font-size: 16px;
-    margin-bottom: 5px;
 }
 
-.list-duration {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.list-desc {
-    font-size: 15px;
-    font-weight: 500;
+/* Harga */
+.price {
+    font-size: 28px;
+    font-weight: 800;
     color: #333;
+    margin-bottom: 20px;
 }
 
-/* Bagian Kanan Kartu (Tombol) */
-.card-action {
-    min-width: 120px;
+.price small {
+    font-size: 14px;
+    color: #888;
+    font-weight: 400;
 }
 
-.btn-beli {
+/* Tombol */
+.btn-product {
     width: 100%;
-    padding: 10px;
-    background-color: #1a73e8;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #1a73e8;
+    background: #fff;
+    color: #1a73e8;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-beli:hover {
-    background-color: #1557b0;
+.btn-product.primary, 
+.btn-product:hover {
+    background: #1a73e8;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
 }
 
-/* Ilustrasi Dekorasi (Kiri Bawah) */
+/* Hapus ilustrasi lama jika masih ada style-nya */
 .floating-illustration {
-    position: fixed;
-    bottom: 0;
-    left: 20px;
-    z-index: 1;
-    opacity: 0.9;
-    pointer-events: none;
+    display: none;
 }
 
-.floating-illustration img {
-    width: 250px;
-    height: auto;
-}
-
-/* Responsive Product List (Mobile) */
-@media (max-width: 768px) {
-    .product-list-card {
-        flex-direction: column;
-        align-items: flex-start;
+/* Responsive Mobile */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Satu kolom di HP */
+        padding: 0 20px;
     }
-    
-    .card-action {
-        width: 100%;
-        margin-top: 20px;
+    .product-card.highlight {
+        transform: scale(1); /* Reset scale di HP */
     }
-    
-    .floating-illustration {
-        display: none;
+    .product-card.highlight:hover {
+        transform: translateY(-5px);
     }
 }
 
 /* =========================================
-   STYLE KHUSUS HALAMAN RECOMMENDATION
+   STYLE KHUSUS HALAMAN RECOMMENDATION (Centered Professional)
    ========================================= */
 
 .recommendation-section {
-    padding: 60px 80px;
-    min-height: 85vh;
+    /* Memberi ruang agar tidak mepet navbar */
+    padding: 80px 20px; 
+    min-height: 90vh;
+    
+    /* Flexbox untuk menengahkan kartu secara horizontal & vertikal */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Mulai dari atas sedikit */
+    padding-top: 100px;
+    
+    /* Background transparan agar gradasi body terlihat */
+    background-color: transparent;
 }
 
 .rec-container {
-    display: flex;
     width: 100%;
-    max-width: 1100px;
-    gap: 50px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-/* --- Bagian Kiri: Form Card --- */
+/* KARTU FORM (Putih Bersih di Tengah) */
 .rec-form-card {
-    flex: 1.2;
     background: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
+    width: 100%;
+    max-width: 650px; /* Lebar ideal agar tidak terlalu lebar/sempit */
+    padding: 50px 60px; /* Padding luas agar elegan */
+    border-radius: 24px; /* Sudut lebih tumpul */
+    
+    /* Shadow yang kuat agar kartu terlihat "pop-up" dari background gradasi */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15); 
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .form-title {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
-    margin-bottom: 25px;
-    color: #333;
-    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
+.form-subtitle {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Input Styles */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form-group label {
+    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 8px;
+    color: #444;
+    margin-bottom: 10px;
     display: block;
-    color: #333;
 }
 
-/* Membuat input melengkung penuh (Pill Shape) */
 .form-control.rounded-pill {
-    border-radius: 50px;
-    padding: 12px 20px;
-    border: 1px solid #aaa;
+    padding: 14px 20px;
+    font-size: 15px;
+    border-radius: 12px; /* Rounded kotak modern (bukan pill penuh) */
+    border: 1px solid #dce0e4;
+    width: 100%;
+    background-color: #fdfdfd;
+    transition: all 0.3s;
 }
 
 .form-control.rounded-pill:focus {
     border-color: #1a73e8;
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1);
+    outline: none;
 }
 
-/* Styling Radio & Checkbox agar sejajar */
+/* Grid 2 Kolom */
+.form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+/* Radio & Checkbox */
 .radio-group, .checkbox-group {
     display: flex;
     gap: 20px;
@@ -899,63 +972,49 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 400;
+    font-size: 15px;
+    color: #555;
     cursor: pointer;
 }
 
 .radio-inline input, .checkbox-inline input {
+    accent-color: #1a73e8;
     width: 18px;
     height: 18px;
-    accent-color: #1a73e8;
     cursor: pointer;
 }
 
-/* Styling Tombol Submit */
-.form-action {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.btn.rounded-pill {
-    border-radius: 50px;
-    padding: 12px 40px;
-    font-size: 16px;
-    width: auto;
-}
-
-/* --- Bagian Kanan: Ilustrasi --- */
-.rec-illustration {
-    flex: 0.8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rec-illustration img {
+/* Tombol */
+.btn.w-100 {
     width: 100%;
-    max-width: 450px;
-    height: auto;
-    animation: float 6s ease-in-out infinite;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(26, 115, 232, 0.2);
+    transition: 0.3s;
 }
 
-/* Responsive Mobile */
-@media (max-width: 900px) {
-    .recommendation-section {
-        padding: 40px 20px;
+.btn.w-100:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(26, 115, 232, 0.3);
+}
+
+/* Hilangkan ilustrasi karena kita pakai layout tengah */
+.rec-illustration {
+    display: none;
+}
+
+/* Responsive HP */
+@media (max-width: 768px) {
+    .rec-form-card {
+        padding: 30px 20px;
+        border-radius: 20px;
     }
     
-    .rec-container {
-        flex-direction: column-reverse;
-        gap: 30px;
-    }
-
-    .rec-illustration img {
-        max-width: 250px;
-    }
-
-    .rec-form-card {
-        width: 100%;
-        padding: 30px 20px;
+    .form-row-grid {
+        grid-template-columns: 1fr; /* Stack ke bawah di HP */
+        gap: 20px;
     }
 }
